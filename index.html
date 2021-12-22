@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html>
+    
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>Moebius strip to crosscap</title>
         <meta author="Maria Luoni"/>
+        <style>
+            body {
+                margin:10px 50px;
+            }
+            h1 {
+                font-family: "Lato", sans-serif;
+                font-size:30px;
+                margin: 0;
+            }
+            h2 {
+                margin-top: 0;
+                font-family: "Lato", sans-serif;
+                font-size:15px;
+            }
+            #paramSlider {
+                width:600px;    
+            }
 
+            #renderCanvas {
+                touch-action: none;
+                border:solid 1px black;
+                outline:none;
+                box-shadow: 10px 10px 10px gray;
+                width:600px;
+                height:400px;
+            }
+            footer {
+                font-size:10px;
+                margin-top: 6em;
+            }
+        </style>
+        <script src="https://cdn.babylonjs.com/babylon.js"></script>
+        <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+        <script src="mylib.js"></script>
+        <script src="02_BetterProiettivo.js"></script>
     </head>
     <body>
         <h1>M&ouml;bius strip crosscap</h1>
-        <p>Qui dovrei metterci l'animazione </p>
+        <p>Qualche parola di spiegazione</p>
+
+
+
+        <div id="controls">
+            <div>
+                <input type="checkbox" id="showGrid" 
+                    onchange="showGridChanged(this)" checked>
+                <label for="subscribeNews">Mostra la griglia</label>
+                &nbsp;
+                <input type="checkbox" id="useTwoColors" 
+                    onchange="useTwoColorsChanged(this)" checked>
+                <label for="subscribeNews">Usa due colori</label>
+            </div>
+            <input 
+                id="paramSlider"
+                type="range" 
+                name="rangeInput" 
+                min="0" max="100" value="0" 
+                oninput="setParam(this.value)">
+        </div>
+
+        <canvas id="renderCanvas" touch-action="none"></canvas>
+        <p>Altre spiegazioni: bla bla bla</p>
+        <footer>
+            <hr>
+            by gmt - 2021 :: più altri crediti, affiliazioni e bla bla bla
+        </footer>
     </body>
+
 </html>
